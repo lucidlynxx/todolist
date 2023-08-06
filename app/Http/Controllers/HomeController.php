@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTodoList;
 use App\Services\TodolistService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -33,9 +34,9 @@ class HomeController extends Controller
         ]);
     }
 
-    public function addToDoList(Request $request): RedirectResponse
+    public function addToDoList(StoreTodoList $request): RedirectResponse
     {
-        $data = $request->input('todo');
+        $data = $request->validated('todo');
         $this->todolistService->addData($data);
         return redirect('/');
     }

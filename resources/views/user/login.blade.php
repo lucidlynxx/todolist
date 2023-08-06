@@ -27,7 +27,7 @@
                 @csrf
                 <div class="form-floating mb-3">
                     <input name="user" type="text" class="form-control" id="user" placeholder="id">
-                    <label for="user">User</label>
+                    <label for="user">Username</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input name="password" type="password" class="form-control" id="password" placeholder="password">
